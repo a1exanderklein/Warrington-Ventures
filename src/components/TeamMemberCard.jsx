@@ -21,33 +21,33 @@ const TeamMemberCard = ({
           />
 
           {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-white bg-opacity-70 text-gray-900 
+          <div className="absolute inset-0 bg-white bg-opacity-70 text-[#244174] 
                           opacity-0 group-hover:opacity-100 transition-opacity 
                           duration-300 ease-in-out p-8 flex flex-col justify-start">
             {/* Name at the top */}
-            <h2 className="text-3xl font-semibold mb-auto">
+            <h2 className="text-2xl lg:text-3xl font-semibold mb-auto">
               {name}
             </h2>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
               {/* Year Section */}
               <div>
-                <p className="text-xs uppercase font-medium text-gray-700 tracking-wider mb-1">Year</p>
-                <p className="text-sm text-gray-800">{year}</p>
+                <p className="text-xs md:text-lg uppercase font-medium text-[#244174] tracking-wider mb-1">Year</p>
+                <p className="text-sm md:text-lg text-[#244174]">{year}</p>
               </div>
               
               {/* Major Section */}
               <div>
-                <p className="text-xs uppercase font-medium text-gray-700 tracking-wider mb-1">Major</p>
-                <p className="text-sm text-gray-800">{major}</p>
+                <p className="text-xs md:text-lg uppercase font-medium text-[#244174] tracking-wider mb-1">Major</p>
+                <p className="text-sm md:text-lg text-[#244174]">{major}</p>
               </div>
             </div>
 
             {/* Focus Section */}
             <div className="mb-12">
-              <p className="text-xs uppercase font-medium text-gray-700 tracking-wider mb-1">Focus</p>
+              <p className="text-xs md:text-lg uppercase font-medium text-[#244174] tracking-wider mb-1">Focus</p>
               {focus && (
-                <p className="text-sm text-gray-800 whitespace-pre-line">
+                <p className="text-sm md:text-lg text-[#244174] whitespace-pre-line">
                   {focus}
                 </p>
               )}
@@ -55,7 +55,7 @@ const TeamMemberCard = ({
 
             {/* Arrow Button at Bottom-Left */}
             <div onClick={onClick} className="absolute bottom-4 left-4">
-              <button className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white">
+              <button className="w-10 h-10 bg-[#244174] rounded-full flex items-center justify-center text-white">
                 →
               </button>
             </div>
@@ -63,7 +63,7 @@ const TeamMemberCard = ({
         </div>
 
         {/* Name underneath if desired (you can remove this if you only want name in overlay) */}
-        <h3 className="text-xl text-gray-900 mb-4 leading-normal">
+        <h3 className="text-xl text-[#244174] mb-4 leading-normal">
           {name}
         </h3>
       </div>
