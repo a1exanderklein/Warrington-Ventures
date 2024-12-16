@@ -11,7 +11,7 @@ const teamMembers = [
     year: 'Senior',
     major: 'Finance',
     focus: 'Artificial Intelligence/ML',
-    imageUrl: './assets/headshot_kundaliaAbhishek.jpg',
+    imageUrl: './assets/headshots/headshot_kundaliaAbhishek.jpg',
     about: "Alexander is a junior studying Computer Science with a focus on Artificial Intelligence and Machine Learning. He’s interested in applying AI to solve real-world problems."
     },
     {
@@ -19,7 +19,7 @@ const teamMembers = [
     year: 'Junior',
     major: 'Finance',
     focus: 'Life Sciences',
-    imageUrl: './assets/headshot_igualadaDaniel.jpg',
+    imageUrl: './assets/headshots/headshot_igualadaDaniel.jpg',
     about: "Alexander is a junior studying Computer Science with a focus on Artificial Intelligence and Machine Learning. He’s interested in applying AI to solve real-world problems."
     },
     {
@@ -27,7 +27,7 @@ const teamMembers = [
     year: 'Senior',
     major: 'Finance',
     focus: 'Life Sciences',
-    imageUrl: './assets/headshot_stoneSam.jpg',
+    imageUrl: './assets/headshots/headshot_stoneSam.jpg',
     about: "Jaedon is a senior majoring in Finance, focusing on investments in Life Sciences. She’s passionate about biotech startups and the future of healthcare."
     },
     {
@@ -35,7 +35,7 @@ const teamMembers = [
     year: 'Junior',
     major: 'Computer Science',
     focus: 'Artificial Intelligence/ML',
-    imageUrl: './assets/headshot_kleinAlexander.jpg',
+    imageUrl: './assets/headshots/headshot_kleinAlexander.jpg',
     about: "Alexander is a junior studying Computer Science with a focus on Artificial Intelligence and Machine Learning. He’s interested in applying AI to solve real-world problems."
     },
     {
@@ -43,7 +43,7 @@ const teamMembers = [
     year: 'Junior',
     major: 'Computer Science',
     focus: 'Artificial Intelligence/ML',
-    imageUrl: './assets/headshot_taylorJaedon.jpg',
+    imageUrl: './assets/headshots/headshot_taylorJaedon.jpg',
     about: "Jaedon is a senior majoring in Finance, focusing on investments in Life Sciences. She’s passionate about biotech startups and the future of healthcare."
     },
     {
@@ -51,7 +51,7 @@ const teamMembers = [
     year: 'Senior',
     major: 'Finance',
     focus: 'Life Sciences',
-    imageUrl: './assets/headshot_yehyaAdam.jpg',
+    imageUrl: './assets/headshots/headshot_yehyaAdam.jpg',
     about: "Jaedon is a senior majoring in Finance, focusing on investments in Life Sciences. She’s passionate about biotech startups and the future of healthcare."
     },
     {
@@ -59,7 +59,7 @@ const teamMembers = [
     year: 'Sophomore',
     major: 'Finance',
     focus: 'Artificial Intelligence/ML',
-    imageUrl: './assets/headshot_gruenBen.jpg',
+    imageUrl: './assets/headshots/headshot_gruenBen.jpg',
     about: "Jaedon is a senior majoring in Finance, focusing on investments in Life Sciences. She’s passionate about biotech startups and the future of healthcare."
     }
 ];
