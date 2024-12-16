@@ -14,3 +14,17 @@ html, body {
     height: 100%;
     color: #244174;
 }
+
+.home-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 16px;
+    background: linear-gradient(rgba(200, 214, 238, 0.7), rgba(200, 214, 238, 0.7)),
+      url('./assets/backgroundGatorGlobe.jpg') no-repeat center center;
+    background-size: cover;
+}
+  

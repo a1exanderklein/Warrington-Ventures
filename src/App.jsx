@@ -1,12 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar"; // Adjust path as needed
+import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
     <>
       <Navbar />
-      <div className="h-full mt-16 p-4">
+      <div className="h-full mt-16">
         <Outlet />
       </div>
     </>
