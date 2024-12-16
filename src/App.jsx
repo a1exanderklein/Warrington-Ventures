@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="h-full mt-16">
+      <div className="h-full">
         <Outlet />
       </div>
     </>

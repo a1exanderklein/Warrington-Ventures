@@ -78,22 +78,24 @@ export default function Team() {
     };
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 min-w-screen p-8">
-            {teamMembers.map((member, index) => (
-                <TeamMemberCard
-                key={index}
-                name={member.name}
-                year={member.year}
-                major={member.major}
-                focus={member.focus}
-                imageUrl={member.imageUrl}
-                onClick={() => openModal(member)}
-                />
-            ))}
+        <div className='mt-20'>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 min-w-screen p-8">
+                {teamMembers.map((member, index) => (
+                    <TeamMemberCard
+                    key={index}
+                    name={member.name}
+                    year={member.year}
+                    major={member.major}
+                    focus={member.focus}
+                    imageUrl={member.imageUrl}
+                    onClick={() => openModal(member)}
+                    />
+                ))}
 
-            {selectedMember && (
-                <TeamMemberModal member={selectedMember} onClose={closeModal} />
-            )}
+                {selectedMember && (
+                    <TeamMemberModal member={selectedMember} onClose={closeModal} />
+                )}
+            </div>
         </div>
     );
 }

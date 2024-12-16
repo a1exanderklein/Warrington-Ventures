@@ -34,20 +34,22 @@ export default function Portfolio() {
     };
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 min-w-screen h-full">
-            {PortfolioCompanies.map((portco, index) => (
-                <PortcoCard
-                key={index}
-                name={portco.name}
-                industry={portco.industry}
-                imageUrl={portco.imageUrl}
-                onClick={() => openModal(portco)}
-                />
-            ))}
+        <div className='mt-20'>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 min-w-screen h-full">
+                {PortfolioCompanies.map((portco, index) => (
+                    <PortcoCard
+                    key={index}
+                    name={portco.name}
+                    industry={portco.industry}
+                    imageUrl={portco.imageUrl}
+                    onClick={() => openModal(portco)}
+                    />
+                ))}
 
-            {selectedPortco && (
-                <PortcoModal portco={selectedPortco} onClose={closeModal} />
-            )}
+                {selectedPortco && (
+                    <PortcoModal portco={selectedPortco} onClose={closeModal} />
+                )}
+            </div>
         </div>
     );
 }
