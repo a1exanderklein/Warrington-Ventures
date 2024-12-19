@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ProfileSection from "../components/ProfileSection";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
-
+  const profileData = [
+    { title: "Founded", value: "1997" },
+    { title: "AUM", value: "$464bn" },
+    { title: "Market Capitalization", value: "$53bn" },
+    { title: "Employees", value: "~3,100" },
+    { title: "Global Offices", value: "35+" },
+    { title: "Direct Institutional Relationships", value: "~2,600" },
+  ];
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("wv-believes");
@@ -22,9 +30,9 @@ export default function About() {
   return (
     <div className="mt-24">
       {/* Top Heading */}
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-gray-800">
-          About Warrington Ventures
+      <div className="text-left p-12">
+        <h1 className="text-8xl font-bold text-gray-800">
+          ABOUT US
         </h1>
       </div>
 
@@ -61,49 +69,7 @@ export default function About() {
               
     </div>
 
-      {/* Profile Section */}
-    <div className="mt-24 mx-auto max-w-6xl">
-      <h2 className="text-5xl font-bold text-gray-800 mb-12 text-left ml-8">Profile</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-gray-800 ml-20">
-        <div className="text-left">
-          <h3 className="font-semibold uppercase text-sm mb-2 border-b border-gray-300 w-72">
-            Founded
-          </h3>
-          <p className="text-4xl font-bold">1997</p>
-        </div>
-        <div className="text-left">
-          <h3 className="font-semibold uppercase text-sm mb-2 border-b border-gray-300  w-72">
-            AUM
-          </h3>
-          <p className="text-4xl font-bold">$464bn</p>
-        </div>
-        <div className="text-left">
-          <h3 className="font-semibold uppercase text-sm mb-2 border-b border-gray-300  w-72">
-            Market Capitalization
-          </h3>
-          <p className="text-4xl font-bold">$53bn</p>
-        </div>
-
-        <div className="text-left">
-          <h3 className="font-semibold uppercase text-sm mb-2 border-b border-gray-300  w-72">
-            Employees
-          </h3>
-          <p className="text-4xl font-bold">~3,100</p>
-        </div>
-        <div className="text-left">
-          <h3 className="font-semibold uppercase text-sm mb-2 border-b border-gray-300  w-72">
-            Global Offices
-          </h3>
-          <p className="text-4xl font-bold">35+</p>
-        </div>
-        <div className="text-left">
-          <h3 className="font-semibold uppercase text-sm mb-2 border-b border-gray-300  w-72">
-            Direct Institutional Relationships
-          </h3>
-          <p className="text-4xl font-bold">~2,600</p>
-        </div>
-      </div>
-    </div>
+    <ProfileSection title="Profile" items={profileData} />
     <div className="mt-24">
       <div id="wv-believes" className="relative mx-auto max-w-6xl overflow-visible">
 
