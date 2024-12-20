@@ -14,7 +14,7 @@ const PortcoCard = ({ name, imageUrl, onClick }) => {
       />
 
       {/* Hover overlay */}
-      <div className="absolute inset-0 bg-gray-300 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"></div>
+      <div className="absolute inset-0 bg-[#C8D6EE] bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"></div>
     </div>
   );
 };

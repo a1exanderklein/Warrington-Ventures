@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PortcoCard from '../components/PortcoCard.jsx';
 import PortcoModal from '../components/PortcoModal.jsx';
+import Header from '../components/Header.jsx';
 
 export default function Portfolio() {
     // Auto Scroll to Top when entering page
@@ -34,7 +35,8 @@ export default function Portfolio() {
     };
 
     return (
-        <div className='mt-20'>
+        <div className=''>
+            <Header photo='./assets/backgroundCampus.jpg' title='Portfolio' headline='Our Partners'/>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 min-w-screen h-full">
                 {PortfolioCompanies.map((portco, index) => (
                     <PortcoCard

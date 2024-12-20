@@ -1,22 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Function to toggle the menu state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Scroll event listener to change navbar style
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.6) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full p-4 px-8 bg-gray-100 shadow-md z-10 flex items-center justify-between">
+      <nav
+        className={`fixed top-0 left-0 w-full p-4 px-8 z-10 flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? "bg-[#C8D6EE] shadow-md" : "bg-transparent"
+        }`}
+      >
         {/* Logo */}
         <NavLink to="/" className="h-12">
           <img
-            className="h-full object-contain"
+            className={`h-full object-contain transition duration-300 ${
+                isScrolled ? "" : "brightness-0 invert"
+            }`}
             src="./assets/logos/wvLogo.png"
             alt="Logo"
           />
@@ -25,7 +46,9 @@ export default function Navbar() {
         {/* Hamburger Icon */}
         <button
           onClick={toggleMenu}
-          className="text-[#244174] focus:outline-none"
+          className={`focus:outline-none transition-colors duration-300 ${
+            isScrolled ? "text-[#244174]" : "text-white"
+          }`}
           aria-label="Toggle Menu"
         >
           {/* Hamburger SVG */}
@@ -54,26 +77,26 @@ export default function Navbar() {
       >
         {/* Close Button */}
         <div className="flex justify-end">
-            <button
+          <button
             onClick={toggleMenu}
             className="p-4 text-[#244174] focus:outline-none"
             aria-label="Close Menu"
-            >
+          >
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
             >
-                <path
+              <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 d="M6 18L18 6M6 6l12 12"
-                />
+              />
             </svg>
-            </button>
+          </button>
         </div>
 
         {/* Navigation Links */}

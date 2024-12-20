@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TeamMemberCard from '../components/TeamMemberCard.jsx';
 import TeamMemberModal from '../components/TeamMemberModal.jsx';
+import Header from '../components/Header.jsx';
 
 export default function Team() {
     // Auto Scroll to Top when entering page
@@ -78,7 +79,8 @@ export default function Team() {
     };
 
     return (
-        <div className='mt-20'>
+        <div className=''>
+            <Header photo='./assets/backgroundPlazas.jpg' title='Team' headline='Meet Us'/>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 min-w-screen p-8">
                 {teamMembers.map((member, index) => (
                     <TeamMemberCard

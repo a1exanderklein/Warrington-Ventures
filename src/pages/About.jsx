@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ProfileSection from "../components/ProfileSection";
+import Header from "../components/Header";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
   const profileData = [
-    { title: "Founded", value: "1997" },
-    { title: "AUM", value: "$464bn" },
+    { title: "Founded", value: "2023" },
+    { title: "AUM", value: "$1m" },
     { title: "Market Capitalization", value: "$53bn" },
-    { title: "Employees", value: "~3,100" },
+    { title: "Employees", value: "~25" },
     { title: "Global Offices", value: "35+" },
     { title: "Direct Institutional Relationships", value: "~2,600" },
   ];
+
+  // Auto Scroll to Top when entering page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("wv-believes");
@@ -28,13 +35,9 @@ export default function About() {
   }, []);
 
   return (
-    <div className="mt-24">
+    <div className="">
       {/* Top Heading */}
-      <div className="text-left p-12">
-        <h1 className="text-8xl font-bold text-gray-800">
-          ABOUT US
-        </h1>
-      </div>
+      <Header photo='./assets/backgroundGatorGlobe.jpg' title='About' headline='About Us'/>
 
       {/* Confined Box */}
       <div className="mx-auto max-w-7xl flex flex-row relative p-10 py-20 overflow-hidden">
@@ -58,7 +61,7 @@ export default function About() {
           </div>
           </div>
           {/* Right Side: Video */}
-          <div className="absolute top-1/2 right-[-2vw] transform -translate-y-[7vw] w-[40vw] h-[20vw] rounded-lg overflow-visible shadow-lg z-1">
+          <div className="absolute top-1/2 right-[-2vw] transform -translate-y-[7vw] w-1/2 h-1/2 overflow-visible shadow-lg z-1">
             <video
               src="/assets/promo.mp4"
               className="w-full h-full object-cover"
@@ -87,7 +90,7 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          className="relative bg-white -mt-24 w-[85%] h-[50vw] p-10 z-10 mx-auto text-center"
+          className="relative bg-white -mt-24 w-[85%] h-[50vw] p-10 z-5 mx-auto text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
