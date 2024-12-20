@@ -90,7 +90,7 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          className="relative bg-white -mt-24 w-[85%] h-[50vw] p-10 z-5 mx-auto text-center"
+          className="relative bg-white -mt-24 w-[85%] h-[30vw] p-10 z-5 mx-auto text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}

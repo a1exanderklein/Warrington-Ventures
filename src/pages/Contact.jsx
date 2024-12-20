@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Header from "../components/Header";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,12 +11,14 @@ export default function Contact() {
     companyName: "",
     location: "",
     industry: "",
-    capital: "",
-    valuation: "",
-    revenue: "No",
     pitchDeck: null,
     hearAboutUs: "",
   });
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -35,14 +38,10 @@ export default function Contact() {
       companyName: formData.companyName,
       location: formData.location,
       industry: formData.industry,
-      capital: formData.capital,
-      valuation: formData.valuation,
-      revenue: formData.revenue,
       hearAboutUs: formData.hearAboutUs,
     };
 
     try {
-      //Replace "YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", and "YOUR_USER_ID" with EmailJS account details. ***
       await emailjs.send(
         "YOUR_SERVICE_ID",
         "YOUR_TEMPLATE_ID",
@@ -57,20 +56,21 @@ export default function Contact() {
   };
 
   return (
-    <div className="mt-24">
-      {/* Contact Us Section */}
-      <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-        <p className="mb-4 text-gray-700">
-          If you have any questions or comments, please contact us via email, or
-          send us a message using the contact form.
-        </p>
-        <div className="grid grid-cols-2">
-          <div className="text-left mb-6">
-            <h2 className="font-bold text-xl">Email</h2>
+    <div className="">
+      <Header photo="./assets/backgroundGatorGlobe.jpg" title="Contact" headline="Get In Touch" />
+      {/* Main Layout */}
+      <div className="max-w-[90rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 p-8 py-16">
+        {/* Left Side: Contact Info */}
+        <div className="space-y-6">
+          <h1 className="text-4xl ">Contact Us</h1>
+          <p className="text-lg text-gray-700">
+            If you have any questions or comments, please contact us via email, or send us a message using the contact form.
+          </p>
+          <div>
+            <h2 className="text-xl font-semibold">Email</h2>
             <p className="text-gray-600">ufwarringtonventures@gmail.com</p>
           </div>
-          <div className="flex justify-end items-center space-x-4 text-2xl">
+          <div className="flex space-x-4 text-2xl">
             {/* Social Media Icons */}
             <a href="https://instagram.com" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-instagram"></i>
@@ -86,118 +86,118 @@ export default function Contact() {
             </a>
           </div>
         </div>
-      </div>
 
-      {/* Founders Form */}
-      <div className="mt-10 max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-6">Founder Submission Form</h1>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="flex space-x-4">
-            <div className="w-1/2">
+        {/* Right Side: Contact Form */}
+        <div>
+          <h1 className="text-2xl mb-6">Founder Submission Form</h1>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex space-x-4">
+              <div className="w-1/2">
+                <label className="block mb-1">
+                  First Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="firstName"
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+              <div className="w-1/2">
+                <label className="block mb-1">
+                  Last Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+            </div>
+
+            <div>
               <label className="block mb-1">
-                First Name <span className="text-red-500">*</span>
+                Email <span className="text-red-500">*</span>
               </label>
               <input
-                type="text"
-                name="firstName"
+                type="email"
+                name="email"
                 onChange={handleChange}
                 required
                 className="w-full p-2 border rounded"
               />
             </div>
-            <div className="w-1/2">
+
+            <div>
               <label className="block mb-1">
-                Last Name <span className="text-red-500">*</span>
+                Company Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
-                name="lastName"
+                name="companyName"
                 onChange={handleChange}
                 required
                 className="w-full p-2 border rounded"
               />
             </div>
-          </div>
 
-          <div>
-            <label className="block mb-1">
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              name="email"
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
-          </div>
+            <div>
+              <label className="block mb-1">
+                Location (City, State) <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="location"
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded"
+              />
+            </div>
 
-          <div>
-            <label className="block mb-1">
-              Company Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="companyName"
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
-          </div>
+            <div>
+              <label className="block mb-1">Industry (e.g., SaaS, Fintech)</label>
+              <input
+                type="text"
+                name="industry"
+                onChange={handleChange}
+                className="w-full p-2 border rounded"
+              />
+            </div>
 
-          <div>
-            <label className="block mb-1">
-              Location (City, State, Country) <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="location"
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
-          </div>
+            <div>
+              <label className="block mb-1">
+                Upload Pitch Deck (.pdf format) <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="file"
+                name="pitchDeck"
+                accept="application/pdf"
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded"
+              />
+            </div>
 
-          <div>
-            <label className="block mb-1">Industry (e.g., SaaS, Fintech)</label>
-            <input
-              type="text"
-              name="industry"
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-            />
-          </div>
+            <div>
+              <label className="block mb-1">How did you hear about us?</label>
+              <textarea
+                name="hearAboutUs"
+                onChange={handleChange}
+                className="w-full p-2 border rounded"
+              />
+            </div>
 
-          <div>
-            <label className="block mb-1">
-              Upload Pitch Deck (.pdf format) <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="file"
-              name="pitchDeck"
-              accept="application/pdf"
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
-          </div>
-
-          <div>
-            <label className="block mb-1">How did you hear about us?</label>
-            <textarea
-              name="hearAboutUs"
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-[#31599d] text-white py-2 rounded hover:bg-[#244174]"
-          >
-            Submit
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="w-full bg-[#31599d] text-white py-2 rounded hover:bg-[#244174]"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

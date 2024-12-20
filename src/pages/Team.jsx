@@ -4,9 +4,11 @@ import TeamMemberModal from '../components/TeamMemberModal.jsx';
 import Header from '../components/Header.jsx';
 
 export default function Team() {
-    // Auto Scroll to Top when entering page
+    // Scroll to top only when entering the page
     useEffect(() => {
+        if (!selectedMember) {
         window.scrollTo(0, 0);
+        }
     }, []);
 
     const [selectedMember, setSelectedMember] = useState(null);

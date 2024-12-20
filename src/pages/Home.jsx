@@ -16,11 +16,11 @@ export default function Home() {
 
       {/* Content */}
       <div className="relative z-10 w-3/5 text-white p-8">
-        <h1 className="text-8xl mb-10">
+        <h1 className="text-7xl mb-10">
           Empowering tomorrow’s entrepreneurs, today
           {/* Empowering <span className='text-gray-700'>tomorrow’s</span> entrepreneurs, <span className='text-[#244174]'>today</span> */}
         </h1>
-        <h2 className="text-3xl leading-10">
+        <h2 className="text-2xl leading-10">
           Fostering groundbreaking innovation and shaping University of Florida
           students into the next generation of early-stage investors and
           entrepreneurs

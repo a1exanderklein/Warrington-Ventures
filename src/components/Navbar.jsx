@@ -33,7 +33,7 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <NavLink to="/" className="h-12">
+        <NavLink to="/" className="h-12 mt-2">
           <img
             className={`h-full object-contain transition duration-300 ${
                 isScrolled ? "" : "brightness-0 invert"
@@ -71,7 +71,7 @@ export default function Navbar() {
 
       {/* Sidebar Menu */}
       <div
-        className={`fixed text-6xl top-0 right-0 h-full w-full sm:w-1/2 md:w-1/3 bg-gray-100 shadow-lg z-40 transform transition-transform duration-300 ${
+        className={`fixed text-4xl top-0 right-0 h-full w-full sm:w-1/2 md:w-1/3 bg-gray-100 shadow-lg z-40 transform transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -100,7 +100,7 @@ export default function Navbar() {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-col space-y-8 p-4">
+        <div className="flex flex-col space-y-8 p-8">
           <NavLink
             to="/"
             className={({ isActive }) =>

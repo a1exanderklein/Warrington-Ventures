@@ -2,15 +2,17 @@ import React from 'react';
 
 const TeamMemberCard = ({
   name,
-  year,       // e.g. "Freshman", "Sophomore", "Junior", "Senior"
-  major,      // e.g. "Computer Science", "Finance"
-  focus,      // e.g. "Artificial Intelligence/ML" or "Life Sciences"
+  year,
+  major,
+  focus,
   imageUrl,
-  href = '#',
-  onClick     // onClick is in the arrow, handles Modal opening
+  onClick, // Handles Modal opening
 }) => {
   return (
-    <a href={href} className="group block text-left relative w-full">
+    <div
+      className="group block text-left relative w-full cursor-pointer"
+      onClick={onClick}
+    >
       <div className="flex flex-col text-left">
         {/* Container for image and overlay */}
         <div className="w-full h-full relative overflow-hidden rounded-md bg-gray-200">
@@ -54,7 +56,7 @@ const TeamMemberCard = ({
             </div>
 
             {/* Arrow Button at Bottom-Left */}
-            <div onClick={onClick} className="absolute bottom-4 left-4">
+            <div className="absolute bottom-4 left-4">
               <button className="w-10 h-10 bg-[#244174] rounded-full flex items-center justify-center text-white">
                 →
               </button>
@@ -62,12 +64,12 @@ const TeamMemberCard = ({
           </div>
         </div>
 
-        {/* Name underneath if desired (you can remove this if you only want name in overlay) */}
+        {/* Name underneath */}
         <h3 className="text-xl text-[#244174] mb-4 leading-normal">
           {name}
         </h3>
       </div>
-    </a>
+    </div>
   );
 };
 

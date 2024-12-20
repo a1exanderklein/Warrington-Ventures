@@ -13,6 +13,7 @@ html, body {
 #root {
     height: 100%;
     color: #244174;
+    font-family: 'Poppins';
 }
 
 .home-container {
